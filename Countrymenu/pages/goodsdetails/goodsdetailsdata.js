@@ -33,5 +33,5 @@ const forthData =
 
 
 export {
-  forthData
+  forthData,
 }
