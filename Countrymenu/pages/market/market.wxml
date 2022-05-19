@@ -57,7 +57,6 @@
               <text class="goods_price">{{ item.goods_price }}</text>
           </navigator>
         </view>
-        <view class="null-wrap"></view>
       </block>
     </view>
     </view>

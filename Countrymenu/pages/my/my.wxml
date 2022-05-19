@@ -3,7 +3,6 @@
       <text  bindtap="logins">182214773</text>
    </view>
    <view class="content">
-        
         <navigator class="left">
           <image src="https://dcdn.it120.cc/2022/05/17/2078a071-24dd-4ef8-9c22-2f548c6fcc6f.png" alt=""></image>
           <text>菜谱收藏</text>
@@ -11,7 +10,7 @@
         <navigator class="right">
           <image src="https://dcdn.it120.cc/2022/05/17/b93b4d45-7c78-415a-9d94-0192b7433b77.png" alt=""></image>
           <text>商品收藏</text>
-        </navigator>
+    </navigator>
 
    </view>
    <view class="box">
