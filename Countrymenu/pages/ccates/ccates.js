@@ -10,6 +10,8 @@ Page({
     firstCategory,
     menuListData: [],
     activeKey: 0,
+    triggered: false,
+    index2:1,
   },
   //更改json键名
     changeJsonKey: function (res){
@@ -40,20 +42,20 @@ Page({
     this.changeData(event.detail);
   },
 
-  changeData(index){
-    if(index==0){
+  changeData(index1,index2){
+    if(index1==0){
       call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,0)
     }
-    else if(index==1){
+    else if(index1==1){
       call.postRequest("api/recipes/type?type=文化菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,1)
     }
-    else if(index==2){
+    else if(index1==2){
       call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,2)
     }
-    else if(index==3){
+    else if(index1==3){
       call.postRequest("api/recipes/type?type=功能菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,3)
     }
@@ -63,24 +65,23 @@ Page({
 
   onPullDown(e) {
     console.log("onPullDown", e);
-    let callback = e.detail.callback;
-    this.getList().then(res => {
-      callback(res) // 成功回调
-    }).catch(res => {
-      callback([]) // 请求失败也要执行回调关闭加载效果
-    })
-
+    this.index2--;
+    this.changeData(2);//实验
   },
 
   onPullUp(e) {
     console.log("onPullUp", e);
-    let callback = e.detail.callback;
-    this.getList().then(res => {
-      callback(res) // 成功回调
-    }).catch(res => {
-      callback([]) // 请求失败也要执行回调关闭加载效果
-    })
+    // this.changeData(2);//实验
+  },
 
+  //用户下拉动作
+  onScrollRefresh: function () {
+    var that=this;
+    setTimeout(function(){
+      that.setData({
+        triggered: false,
+      })
+    },2000);
   },
 
   
