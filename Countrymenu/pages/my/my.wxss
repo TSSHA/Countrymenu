@@ -57,3 +57,18 @@
   height: 60rpx;
   width: 60rpx;
 }
+
+.box button{
+  padding:0;
+  margin:0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  background-color: white;
+}
+
+.box button::after{
+  border:0;
+}

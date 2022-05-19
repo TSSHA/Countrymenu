@@ -14,16 +14,16 @@
 
    </view>
    <view class="box">
-   <navigator class="box1">
+   <view class="box1">
      <image src="https://dcdn.it120.cc/2022/05/17/a3acabd4-dbf0-49ea-b148-9d723cb39d22.png" alt=""></image>
      <text>勋章</text>
-   </navigator>
+   </view>
    <navigator class="box1">
     <image src="https://dcdn.it120.cc/2022/05/17/7e43070f-180d-49c7-8a70-8b703d15f761.png" alt=""></image>
     <text>关于我们</text>
   </navigator>
-  <navigator class="box1">
+  <view class="box1">
     <image src="https://dcdn.it120.cc/2022/05/17/97272213-895f-4e2a-95a6-bf6800297b89.png" alt=""></image>
-    <text>分享给朋友</text>
-  </navigator>
+    <button open-type="share">分享给朋友</button>
+  </view>
 </view>
