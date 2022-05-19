@@ -7,14 +7,18 @@
     </van-sidebar>
   </view>
   <view class="right-side">
-    <navigator class="box_1" url="../menudetails/menudetails"
-    wx:for="{{secondCategory}}"
+    <scroll-view class='nav' scroll-y>
+      <view class="box_1"
+      wx:for="{{secondCategory}}"
     wx:key="*this">
+    <navigator  url="../menudetails/menudetails"
+    >
     <image mode="widthFix" src="{{item.cat_icon}}"></image>
     <text class="menu_name">{{item.goods_name}}</text>
     <text class="menu_describe">{{item.goods_describe}}</text>
     </navigator>
-   
+  </view>
+  </scroll-view>
   </view>
 <van-notify id="van-notify" />
 
