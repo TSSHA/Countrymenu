@@ -1,6 +1,6 @@
 <view class="top">
-      <image src="https://dcdn.it120.cc/2022/05/13/b979d4c3-0471-4db7-8a30-6b6b30552344.jpg" alt="1"></image>
-      <text  bindtap="logins">182214773</text>
+      <image src="{{userInfo.avatarUrl}}" alt="1"></image>
+      <text  bindtap="logins">{{userInfo.nickName}}</text>
    </view>
    <view class="content">
         <navigator class="left">
