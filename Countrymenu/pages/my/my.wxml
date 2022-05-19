@@ -18,7 +18,7 @@
      <image src="https://dcdn.it120.cc/2022/05/17/a3acabd4-dbf0-49ea-b148-9d723cb39d22.png" alt=""></image>
      <text>勋章</text>
    </view>
-   <navigator class="box1">
+   <navigator class="box1" url="../about/about">
     <image src="https://dcdn.it120.cc/2022/05/17/7e43070f-180d-49c7-8a70-8b703d15f761.png" alt=""></image>
     <text>关于我们</text>
   </navigator>
