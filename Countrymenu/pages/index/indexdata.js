@@ -27,12 +27,12 @@ const secondData = [
     funcPhoto: "https://dcdn.it120.cc/2022/05/10/ae2b0c2c-d381-4c09-a021-03dffa751820.jpeg"
   },
   {
-    guide_name: "自制菜谱",
+    guide_name: "功能菜谱",
     id: "62",
     funcPhoto: "https://dcdn.it120.cc/2022/05/10/ae2b0c2c-d381-4c09-a021-03dffa751820.jpeg"
   },
   {
-    guide_name: "功能菜谱",
+    guide_name: "自制菜谱",
     id: "62",
     funcPhoto: "https://dcdn.it120.cc/2022/05/10/ae2b0c2c-d381-4c09-a021-03dffa751820.jpeg"
   }

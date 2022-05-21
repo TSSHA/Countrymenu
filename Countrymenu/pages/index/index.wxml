@@ -19,9 +19,10 @@
   <!--轮播图 结束-->
   <!--导航 开始-->
   <view class="index_cate">
-      <navigator url="../ccates/ccates"
+      <navigator url="../ccates/ccates?pageData={{index}}"
       wx:for="{{guideData}}"
-      wx:key="index">
+      wx:for-index="index"
+      wx:key="*this">
       <image mode="aspectFill" src="{{item.funcPhoto}}"></image>
       <text>{{item.guide_name}}</text>
     </navigator>

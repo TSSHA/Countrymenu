@@ -12,10 +12,15 @@ Page({
     goodslistData: []
   },
 
+
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
+  // Navigate
     let newArray1 = this.data.firstData;
     let newArray2 = this.data.secondData;
     let newArray3 = this.data.thirdData;

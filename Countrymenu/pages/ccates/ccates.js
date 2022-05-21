@@ -87,14 +87,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-    let newArray4 = this.data.forthData;
-    call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-    this.loadRecipe,console.log)
+  onLoad: function (data) {
+    //初始化页面
     this.setData({
-      goodsData:newArray4
+      activeKey:data.pageData
     })
+    if(data.pageData==0){
+      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,0)
+    }
+    else if(data.pageData==1){
+      call.postRequest("api/recipes/type?type=文化菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,1)
+    }
+    else if(data.pageData==2){
+      call.postRequest("api/recipes/type?type=功能菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,2)
+    }
+    else if(data.pageData==3){
+      call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,3)
+    }
   },
  
   /**
