@@ -1,6 +1,6 @@
 // 0 引入 用来发送请求的方法
-import{ request } from "../../request/index.js";
 import {firstData,secondData,thirdData} from "./indexdata.js"
+
 // pages/search/index/index.js
 Page({
 

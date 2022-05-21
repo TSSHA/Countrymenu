@@ -108,6 +108,10 @@ Page({
       call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,3)
     }
+    else{
+      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,0)
+    }
   },
  
   /**
