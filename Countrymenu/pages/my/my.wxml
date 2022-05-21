@@ -3,11 +3,11 @@
       <text  bindtap="logins">{{userInfo.nickName}}</text>
    </view>
    <view class="content">
-        <navigator class="left">
+        <navigator class="left" url="../ccollection/ccollection">
           <image src="https://dcdn.it120.cc/2022/05/17/2078a071-24dd-4ef8-9c22-2f548c6fcc6f.png" alt=""></image>
           <text>菜谱收藏</text>
         </navigator>
-        <navigator class="right">
+        <navigator class="right" url="../mcollection/mcollection">
           <image src="https://dcdn.it120.cc/2022/05/17/b93b4d45-7c78-415a-9d94-0192b7433b77.png" alt=""></image>
           <text>商品收藏</text>
     </navigator>

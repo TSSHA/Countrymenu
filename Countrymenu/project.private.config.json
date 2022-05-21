@@ -64,6 +64,19 @@
         {
           "name": "pages/about/about",
           "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ccollection/ccollection",
+          "pathName": "pages/ccollection/ccollection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mcollection/mcollection",
+          "pathName": "pages/mcollection/mcollection",
+          "query": "",
           "scene": null
         }
       ]

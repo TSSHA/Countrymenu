@@ -12,7 +12,9 @@
     "pages/my/my",
     "pages/menudetails/menudetails",
     "pages/goodsdetails/goodsdetails",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/ccollection/ccollection",
+    "pages/mcollection/mcollection"
   ],
   "window": {
     "backgroundTextStyle": "light",

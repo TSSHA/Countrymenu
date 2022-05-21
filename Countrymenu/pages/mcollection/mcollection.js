@@ -1,5 +1,4 @@
-import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
-import {firstData,secondData,thirdData,forthData} from "../mcollection/mcollectiondata.js"
+import {firstData,secondData,thirdData,forthData} from "./mcollectiondata.js"
 Page({
 
   /**

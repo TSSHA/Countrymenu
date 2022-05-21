@@ -1,0 +1,22 @@
+<view class="right-side">
+    <scroll-view class='nav' scroll-y bindscrolltolower="onPullUp" bindrefresherrestore="onPullDown" refresher-enabled="true" bindrefresherrefresh="onScrollRefresh" refresher-triggered="{{triggered}}">
+      <view class="box_1"
+      wx:for="{{menuListData}}"
+    wx:key="*this">
+    <navigator  url="../menudetails/menudetails"
+    >
+    <van-card
+    desc="{{item.goods_describe}}"
+    title="{{item.goods_name}}"
+    thumb="{{item.cat_icon}}"
+    title-class="product-name"
+    desc-class="product-desc"
+    price-class="product-price">
+    <view slot="footer">
+    <van-button size="mini">删除</van-button>
+  </view>
+   </van-card>
+    </navigator>
+  </view>
+  </scroll-view>
+  </view>

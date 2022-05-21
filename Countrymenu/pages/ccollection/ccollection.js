@@ -1,4 +1,3 @@
-import {firstCategory} from "./ccatesdata.js"
 const call = require("../../utils/request")
 var app = getApp()
 Page({
@@ -7,9 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    firstCategory,
     menuListData: [],
-    activeKey: 0,
     triggered: false,
     index2:1,
   },
@@ -33,43 +30,13 @@ Page({
         })
         
     },
-  onChange(event) {
-    this.setData({
-      activeKey:event.detail
-    })
-    this.changeData(event.detail);
-  },
-
-  changeData(index1,index2){
-    if(index1==0){
-      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,0)
-    }
-    else if(index1==1){
-      call.postRequest("api/recipes/type?type=文化菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,1)
-    }
-    else if(index1==2){
-      call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,2)
-    }
-    else if(index1==3){
-      call.postRequest("api/recipes/type?type=功能菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,3)
-    }
-
-    
-  },
 
   onPullDown(e) {
     console.log("onPullDown", e);
-    this.index2--;
-    this.changeData(2);//实验
   },
 
   onPullUp(e) {
     console.log("onPullUp", e);
-    // this.changeData(2);//实验
   },
 
   //用户下拉动作

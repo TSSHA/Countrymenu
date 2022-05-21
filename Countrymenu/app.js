@@ -10,7 +10,6 @@ App({
     wx.login({
 
       success: res => {
-
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         const code = res.code;
         // 设置appid
@@ -35,5 +34,6 @@ App({
   globalData: {
     userInfo: null,
     host: 'https://orall.top/recipe/',
+    AppSecret:'',
   }
 })
