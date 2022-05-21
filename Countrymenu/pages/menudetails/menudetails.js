@@ -13,7 +13,9 @@ Page({
   },
 
   changeJsonKey_Specific: function (res){
-            return res.map(function(item){
+            let a = [];
+            a.push(res)
+            return a.map(function(item){
                 return {
                     cat_id: item.id,
                     cat_name: item.dishes,
@@ -22,8 +24,8 @@ Page({
                     regional:item.regional,
                     culture_desc:item.culture,
                     efficacy:item.efficacy,
-                    cailiao:item.materials,
-                    buzhou:item.practice,
+                    cailiao:item.materials.split('|'),
+                    buzhou:item.practice.split('|'),
                 }
             });
         },
@@ -32,11 +34,12 @@ Page({
 
     loadSpecificRecipe: function (res){
           let that = this
-          //console.log(res)
+
+          console.log(res)
           // 更改json键名 
           console.log(that.changeJsonKey_Specific(res['data']))
           that.setData({
-              menuData: that.changeJsonKey(res['data']),
+              menuData: that.changeJsonKey_Specific(res['data'])[0],
           })
     },
     
@@ -49,10 +52,6 @@ Page({
     //注意这里的id是对应的id，data数据中应该有一个
     call.postRequest("api/recipes/"+data.menuid,{},"application/x-www-form-urlencoded",
     this.loadSpecificRecipe,console.log)
-    let newArray4 = this.data.forthData;
-    this.setData({
-      menuData:newArray4
-    })
   },
 
   /**

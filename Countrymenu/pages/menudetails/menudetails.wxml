@@ -3,7 +3,8 @@
         <image src="{{menuData.cat_icon}}" class="slideImage" />
     </block>
   <view class="name">{{menuData.cat_name}}</view>
-  <view class="desc">文化：{{menuData.culture_desc}}</view>
+  <view class="desc">地区：{{menuData.culture_desc}}</view>
+  <view class="desc">功效：{{menuData.efficacy}}</view>
   <view class="cailiao">
     配料：
   </view>
