@@ -7,7 +7,7 @@
     </van-sidebar>
   </view>
   <view class="right-side">
-    <scroll-view class='nav' scroll-y bindscrolltolower="onPullUp" bindrefresherrestore="onPullDown" refresher-enabled="true" bindrefresherrefresh="onScrollRefresh" refresher-triggered="{{triggered}}">
+    <scroll-view class='nav' scroll-y scroll-top='{{topNum}}' bindscroll="scrolltoupper" bindscrolltolower="onPullUp" bindrefresherrestore="onPullDown" refresher-enabled="true" bindrefresherrefresh="onScrollRefresh"  bindtap="goTop" refresher-triggered="{{triggered}}">
       <view class="box_1"
       wx:for="{{menuListData}}"
     wx:key="*this">
@@ -20,6 +20,6 @@
   </view>
   </scroll-view>
   </view>
-<van-notify id="van-notify" />
+<loading hidden="{{loadinghidden}}">数据加载中</loading>
 
 

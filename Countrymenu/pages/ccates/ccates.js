@@ -2,7 +2,6 @@ import {firstCategory} from "./ccatesdata.js"
 const call = require("../../utils/request")
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -11,8 +10,39 @@ Page({
     menuListData: [],
     activeKey: 0,
     triggered: false,
+    stopPull:false,
     index2:1,
+    topNum:0,
+    loadinghidden:false,
+    done:false,
   },
+
+  //  // 获取滚动条当前位置
+  //  scrolltoupper:function(e){
+  //   console.log(e)
+  //   let t =  e.detail.scrollTop;
+  //   if (t > 100 && !this.data.floorstatus) {
+  //     // 避免重复setData
+  //     this.setData({
+  //        floorstatus: true
+  //     });
+  //   } 
+
+  //   if(t <= 100 && this.data.floorstatus){
+  //     this.setData({
+  //       floorstatus: false
+  //     });
+  //   }
+  // },
+
+  //回到顶部
+  goTop: function (e) {  // 一键回到顶部
+    this.setData({
+      topNum: this.data.topNum = 0
+    });
+  },
+
+  
   //更改json键名
     changeJsonKey: function (res){
         return res.map(function(item){
@@ -28,11 +58,32 @@ Page({
     loadRecipe: function (res,index){
         // 更改json键名 
         // var up = 'forthData['+index+'].children'
+        if(res['data'].length==0)
+        {
+           return;
+        }
+        if(res['data'].length<8)
+        {
+           this.data.done=true;
+        }
         this.setData({
           menuListData: this.changeJsonKey(res['data']),
         })
+        this.setData({
+          stopPull:false,
+        })
+        this.setData({
+          loadinghidden:true,
+        })
+        this.goTop();
+        console.log("gotop")
         
     },
+
+    /**
+   * 页面上拉触底事件的处理函数
+   */
+    
   onChange(event) {
     this.setData({
       activeKey:event.detail
@@ -40,7 +91,9 @@ Page({
     this.changeData(event.detail);
   },
 
-  changeData(index1,index2){
+  changeData(index1){
+    this.data.index2=1;
+    this.data.done=false;
     if(index1==0){
       call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,0)
@@ -63,13 +116,34 @@ Page({
 
   onPullDown(e) {
     console.log("onPullDown", e);
-    this.index2--;
-    this.changeData(2);//实验
+    if(this.data.index2<=1)
+      {
+        return;
+      }
+    this.data.index2--;
+    call.postRequest("api/recipes/type?type=日常菜谱",{'page':this.data.index2},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,0)
   },
 
   onPullUp(e) {
-    console.log("onPullUp", e);
-    // this.changeData(2);//实验
+    if(this.data.done==true)
+    {
+
+      return;
+    }
+    if (this.data.stopPull) {
+       wx.stopPullDownRefresh()
+    }
+    else{
+      this.data.stopPull=true;
+      console.log("onPullUp", e);
+      this.data.index2++;
+      this.setData({
+        loadinghidden:false,
+      })
+      call.postRequest("api/recipes/type?type=日常菜谱",{'page':this.data.index2},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log,0)
+    }
   },
 
   //用户下拉动作
@@ -79,7 +153,7 @@ Page({
       that.setData({
         triggered: false,
       })
-    },2000);
+    },1000);
   },
 
   

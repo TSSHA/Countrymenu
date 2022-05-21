@@ -11,7 +11,7 @@
     <van-grid column-num="2" border="true">
   <van-grid-item use-slot wx:for="{{menuData.cailiao}}"
   wx:key="*this">
-  {{item.cailiao_name}}
+  {{item}}
   </van-grid-item>
 </van-grid>
   <view class="buzhou">
@@ -23,11 +23,11 @@
   wx:key="*this">
     <view>
       {{index+1}}
-      <image src="{{item.cat_icon}}"/>
-      <text>{{item.descibe}}</text>
+      <text>{{item}}</text>
     </view>
   </view>
   </view>
+  <view class="empty" bindtap="shoucangproduct"></view>
   <view class="buy" bindtap="shoucangproduct">收藏</view>
 </view>
 

@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "菜谱分类"
+  "navigationBarTitleText": "菜谱分类",
+  "onReachBottomDistance": 150
 }
