@@ -12,7 +12,7 @@
     <view class="box_1" 
     wx:for="{{secondCategory}}"
     wx:key="*this">
-    <navigator class="goods"url="../goodsdetails/goodsdetails" >
+    <navigator class="goods" url="../goodsdetails/goodsdetails?goodsid={{item.cat_id}}" >
     <van-card
     num="1"
     price="{{item.goods_price}}"

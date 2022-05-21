@@ -40,14 +40,14 @@
       <text>{{item.guide_name}}</text>
     </navigator>
   </view>
-  
   <!--导航 结束-->
+
   <view class="goods_list">
     <view class="goods">
       <block wx:for="{{ goodslistData }}"
         wx:key="index">
         <view class="item" >
-          <navigator>
+          <navigator url="../goodsdetails/goodsdetails?goodsid={{item.id}}">
             <image 
               lazy-load
               mode="widthFix"

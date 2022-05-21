@@ -1,6 +1,7 @@
 <view class="container">
   <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-      <block wx:for="{{goodsData.icon}}">
+      <block wx:for="{{goodsData.icon}}"
+      wx:key="*this">
           <swiper-item>
               <image src="{{item.cat_icon}}" class="slideImage" />
           </swiper-item>

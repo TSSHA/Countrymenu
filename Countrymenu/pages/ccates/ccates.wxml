@@ -11,7 +11,7 @@
       <view class="box_1"
       wx:for="{{menuListData}}"
     wx:key="*this">
-    <navigator  url="../menudetails/menudetails"
+    <navigator  url="../menudetails/menudetails?menuid={{item.cat_id}}"
     >
     <image mode="widthFix" src="{{item.cat_icon}}"></image>
     <text class="menu_name">{{item.goods_name}}</text>
