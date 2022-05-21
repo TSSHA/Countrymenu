@@ -1,15 +1,15 @@
 <view class="container">
   <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-      <block wx:for="{{goodsData.icon}}"
+      <block wx:for="{{goodsData.cat_icon}}"
       wx:key="*this">
           <swiper-item>
-              <image src="{{item.cat_icon}}" class="slideImage" />
+              <image src="{{item}}" class="slideImage" />
           </swiper-item>
       </block>
   </swiper>
   <view class="name">{{goodsData.cat_name}}</view>
-  <view class="brief">{{goodsData.culture_desc}}</view>
-  <view class="origin">产地：{{goodsData.origin}}</view>
+  <view class="brief">{{goodsData.goods_describe}}</view>
+  <view class="origin">产地：{{goodsData.place}}</view>
   <view class="price">¥{{goodsData.price}}</view>
   <view class="empty" bindtap="shoucangproduct"></view>
   <view class="buy" bindtap="shoucangproduct">收藏</view>
