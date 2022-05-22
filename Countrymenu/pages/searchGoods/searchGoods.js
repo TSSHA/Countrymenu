@@ -63,8 +63,8 @@ loadGoods: function (res){
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    call.postRequest("api/mall/type?type=蔬菜豆制品",{'page':'1'},"application/x-www-form-urlencoded",
+  onLoad: function (data) {
+    call.postRequest("api/mall/search?find="+data.value,{'page':'1'},"application/x-www-form-urlencoded",
       this.loadGoods,console.log,0)
     
   },

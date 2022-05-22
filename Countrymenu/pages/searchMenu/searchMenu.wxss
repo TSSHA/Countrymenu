@@ -1,0 +1,29 @@
+.right-side{
+  width: 100%;
+  float: left;
+}
+
+.right-side .nav{
+  height: 100vh;
+}
+
+.right-side .box_1{
+  width: 100%;
+  float: left;
+}
+
+.right-side .box_1 .product-name {
+  padding-top: 40rpx;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+
+.right-side .box_1 .product-desc {
+  font-size: 29rpx;
+  color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}

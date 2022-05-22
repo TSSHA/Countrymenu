@@ -10,6 +10,7 @@ Page({
   data: {
     forthData,
     menuData: [],
+    coll:"收藏",
   },
 
   changeJsonKey_Specific: function (res){
@@ -35,14 +36,14 @@ Page({
     loadSpecificRecipe: function (res){
           let that = this
 
-          console.log(res)
-          // 更改json键名 
-          console.log(that.changeJsonKey_Specific(res['data']))
           that.setData({
               menuData: that.changeJsonKey_Specific(res['data'])[0],
           })
     },
     
+    shoucangproduct: function (res){
+          
+    },
 
   /**
    * 生命周期函数--监听页面加载

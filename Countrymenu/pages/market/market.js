@@ -9,10 +9,27 @@ Page({
     secondData, 
     thirdData, 
     swiperData:[],
-    goodslistData: []
+    goodslistData: [],
+    value: '',
   },
 
-
+  onChange(e) {
+    this.setData({
+      value: e.detail,
+    });
+  },
+  onSearch() {
+    console.log('搜索1',this.data.value);
+    wx.navigateTo({
+      url: '../searchGoods/searchGoods?value='+this.data.value,
+  })
+  },
+  onClick() {
+    console.log('搜索2',this.data.value);
+    wx.navigateTo({
+      url: '../searchGoods/searchGoods?value='+this.data.value,
+  })
+  },
 
 
 

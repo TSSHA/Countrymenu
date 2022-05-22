@@ -1,11 +1,9 @@
 {
   "pages": [
-    "pages/market/market",
     "pages/index/index",
+    "pages/market/market",
     "pages/logs/logs",
-    "pages/search/search",
-    "pages/search/index",
-    "pages/search/index/index",
+    "pages/searchMenu/searchMenu",
     "pages/community/community",
     "pages/mcates/mcates",
     "pages/ccates/ccates",
@@ -14,7 +12,8 @@
     "pages/goodsdetails/goodsdetails",
     "pages/about/about",
     "pages/ccollection/ccollection",
-    "pages/mcollection/mcollection"
+    "pages/mcollection/mcollection",
+    "pages/searchGoods/searchGoods"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -68,7 +67,9 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-goods-action": "@vant/weapp/goods-action/index",
     "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
-    "van-goods-action-button": "@vant/weapp/goods-action-button/index"
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-toast": "@vant/weapp/toast/index"
   },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

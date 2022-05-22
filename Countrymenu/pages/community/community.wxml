@@ -1,8 +1,5 @@
 <!--pages/market/market.wxml-->
 <view class="market_index">
-  <!--搜索框 开始-->
-  <SearchInput></SearchInput>
-  <!--搜索框 结束-->
   <!--导航 结束-->
   <view>
   <view class="container">
@@ -16,7 +13,7 @@
               mode="widthFix"
               src="{{ item.funcPhoto }}" />
               <text class="page_name">{{ item.page_name }}</text>
-              <view class="text-center">{{ item.remark }}</view>
+              <view class="text-center"></view>
           </navigator>
         </view>
         <view class="null-wrap"></view>

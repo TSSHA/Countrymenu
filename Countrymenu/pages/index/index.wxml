@@ -1,7 +1,17 @@
 <!--index.wxml-->
 <view class="caipu_index">
   <!--搜索框 开始-->
-  <SearchInput></SearchInput>
+  <van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  background="#f03d37"
+>
+  <view slot="action" bind:tap="onClick">搜索</view>
+</van-search>
+<van-toast id="van-toast" />
   <!--搜索框 结束-->
   <!--轮播图 开始-->
   <view class="index_swiper">

@@ -1,6 +1,6 @@
 // 0 引入 用来发送请求的方法
 import {firstData,secondData,thirdData} from "./indexdata.js"
-
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 // pages/search/index/index.js
 Page({
 
@@ -12,6 +12,23 @@ Page({
     secondData, 
     thirdData, 
     swiperData:[],
+    value: '',
+  },
+
+  onChange(e) {
+    this.setData({
+      value: e.detail,
+    });
+  },
+  onSearch() {
+    wx.navigateTo({
+      url: '../searchMenu/searchMenu?value='+this.data.value,
+  })
+  },
+  onClick() {
+    wx.navigateTo({
+      url: '../searchMenu/searchMenu?value='+this.data.value,
+  })
   },
 
   /**

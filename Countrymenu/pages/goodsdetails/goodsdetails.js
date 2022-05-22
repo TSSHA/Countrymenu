@@ -10,6 +10,7 @@ Page({
   data: {
     forthData,
     goodsData: [],
+    coll:"收藏",
   },
 
   changeJsonKey_Specific: function (res){
@@ -39,6 +40,10 @@ loadSpecificRecipe: function (res){
     that.setData({
         goodsData: that.changeJsonKey_Specific(res['data'])[0],
     })
+},
+
+shoucangproduct: function (res){
+          
 },
 
 

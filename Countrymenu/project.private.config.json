@@ -78,6 +78,18 @@
           "pathName": "pages/mcollection/mcollection",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/searchMenu/searchMenu",
+          "pathName": "pages/searchMenu/searchMenu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/searchGoods/searchGoods",
+          "pathName": "pages/searchGoods/searchGoods",
+          "query": "",
+          "scene": null
         }
       ]
     }

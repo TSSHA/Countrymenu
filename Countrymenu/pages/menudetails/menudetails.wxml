@@ -29,6 +29,6 @@
   </view>
   </view>
   <view class="empty" bindtap="shoucangproduct"></view>
-  <view class="buy" bindtap="shoucangproduct">收藏</view>
+  <view class="buy" bindtap="shoucangproduct">{{coll}}</view>
 </view>
 
