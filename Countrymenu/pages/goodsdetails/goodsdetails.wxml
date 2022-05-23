@@ -11,7 +11,7 @@
   <view class="brief">{{goodsData.goods_describe}}</view>
   <view class="origin">产地：{{goodsData.place}}</view>
   <view class="price">¥{{goodsData.price}}</view>
-  <view class="empty" bindtap="shoucangproduct"></view>
-  <view class="buy" bindtap="shoucangproduct">{{coll}}</view>
+  <view class="empty"></view>
+  <view class="buy" bindtap="collectproduct">{{coll}}</view>
 </view>
 

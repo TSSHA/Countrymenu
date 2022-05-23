@@ -11,6 +11,7 @@ Page({
     forthData,
     goodsData: [],
     coll:"收藏",
+    goodsid:"",
   },
 
   changeJsonKey_Specific: function (res){
@@ -42,8 +43,33 @@ loadSpecificRecipe: function (res){
     })
 },
 
-shoucangproduct: function (res){
-          
+collectproduct: function (){
+  let token=wx.getStorageSync('token');
+  if(this.data.coll=="已收藏"){
+    call.postRequest("api/collection/delete?type=mall",{'token':token,'id':this.data.goodsid},"application/x-www-form-urlencoded",console.log,console.log);
+    this.setData({
+       coll: '收藏',
+     })
+}
+  else if(this.data.coll=="收藏"){
+     call.postRequest("api/collection/insert?itemtype=mall",{'itemid':this.data.goodsid,'token':token},"application/x-www-form-urlencoded",console.log,console.log);
+  this.setData({
+     coll: '已收藏',
+   })
+  }
+},
+getIfCollect: function (res){
+  console.log(res.data);
+    if(res.data=="该收藏不存在"){
+        this.setData({
+          coll: '收藏',
+        })
+    }
+    else if(res.data=="该收藏存在"){
+      this.setData({
+        coll: '已收藏',
+      })
+  }
 },
 
 
@@ -52,6 +78,12 @@ shoucangproduct: function (res){
 */
 onLoad: function (data) {
       console.log(data);
+      this.setData({
+         goodsid: data.goodsid,
+       })
+      let token=wx.getStorageSync('token');
+      call.postRequest("api/collection/exist?type=mall",{'token':token,'id':data.goodsid},"application/x-www-form-urlencoded",this.getIfCollect,console.log);
+
       //注意这里的id是对应的id，data数据中应该有一个
       call.postRequest("api/mall/"+data.goodsid,{},"application/x-www-form-urlencoded",
       this.loadSpecificRecipe,console.log)

@@ -8,7 +8,6 @@ Page({
   data: {
     menuListData: [],
     triggered: false,
-    index2:1,
   },
   //更改json键名
     changeJsonKey: function (res){
@@ -25,11 +24,26 @@ Page({
     loadRecipe: function (res,index){
         // 更改json键名 
         // var up = 'forthData['+index+'].children'
+        console.log(res);
         this.setData({
           menuListData: this.changeJsonKey(res['data']),
         })
         
     },
+
+    deleteMenu:function(e){
+    var that=this;
+     console.log(e.target.dataset.menuid);
+     let token=wx.getStorageSync('token');
+     call.postRequest("api/collection/delete?type=recipe",{'token':token,'id':e.target.dataset.menuid},"application/x-www-form-urlencoded",this.deleteMenu2,console.log);
+   },
+
+    deleteMenu2:function(res){
+      console.log(res);
+      let token=wx.getStorageSync('token');
+      call.postRequest("api/collection/type?type=recipe",{'token':token},"application/x-www-form-urlencoded",
+      this.loadRecipe,console.log)
+   },
 
   onPullDown(e) {
     console.log("onPullDown", e);
@@ -55,13 +69,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    let newArray4 = this.data.forthData;
-    call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+    let token=wx.getStorageSync('token');
+    call.postRequest("api/collection/type?type=recipe",{'token':token},"application/x-www-form-urlencoded",
     this.loadRecipe,console.log)
-    this.setData({
-      goodsData:newArray4
-    })
   },
  
   /**

@@ -7,8 +7,10 @@
   height: 100vh;
 }
 
-.right-side .box_1{
-  width: 100%;
+
+
+.right-side .box_1 navigator {
+  width: 85%;
   float: left;
 }
 
@@ -26,4 +28,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+}
+
+van-button{
+  padding-top: 140rpx;
+  float:right;
 }

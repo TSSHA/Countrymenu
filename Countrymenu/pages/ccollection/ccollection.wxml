@@ -12,11 +12,9 @@
     title-class="product-name"
     desc-class="product-desc"
     price-class="product-price">
-    <view slot="footer">
-    <van-button size="mini">删除</van-button>
-  </view>
    </van-card>
     </navigator>
+    <van-button bindtap="deleteMenu" data-menuid="{{item.cat_id}}" size="mini">删除</van-button>
   </view>
   </scroll-view>
   </view>

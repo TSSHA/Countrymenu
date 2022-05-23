@@ -8,7 +8,6 @@ Page({
   data: {
     goodsListData: [],
     triggered: false,
-    activeKey: 0,
     
 
   },
@@ -27,11 +26,7 @@ Page({
 //加载商品
 loadGoods: function (res){
   // 更改json键名 
-  console.log(res);
-  if(res['data'].length==0)
-  {
-     return;
-  }
+  console.log(res['data']);
   // if(res['data'].length<8)
   // {
   //    this.data.done=true;
@@ -50,13 +45,21 @@ loadGoods: function (res){
   
 },
 
-  onChange(event) {
-    this.setData({
-      activeKey:event.detail
-    })
-    this.changeData(event.detail);
-  },
+deleteGoods2:function(res){
+   console.log(res);
+   let token=wx.getStorageSync('token');
+   call.postRequest("api/collection/type?type=mall",{'token':token},"application/x-www-form-urlencoded",
+   this.loadGoods,console.log)
+},
 
+  
+
+  deleteGoods:function(e){
+    var that=this;
+     console.log(e.target.dataset.goodsid);
+     let token=wx.getStorageSync('token');
+     call.postRequest("api/collection/delete?type=mall",{'token':token,'id':e.target.dataset.goodsid},"application/x-www-form-urlencoded",this.deleteGoods2,console.log);
+  },
 
   
 
@@ -64,9 +67,9 @@ loadGoods: function (res){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    call.postRequest("api/mall/type?type=蔬菜豆制品",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadGoods,console.log,0)
-    
+    let token=wx.getStorageSync('token');
+    call.postRequest("api/collection/type?type=mall",{'token':token},"application/x-www-form-urlencoded",
+    this.loadGoods,console.log)
   },
 
   /**
