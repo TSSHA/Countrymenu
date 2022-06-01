@@ -22,7 +22,7 @@ Page({
                     cat_id: item.id,
                     cat_name: item.dishes,
                     goods_describe:item.describes,
-                    cat_icon: (app.globalData.host + item.picture.slice(1)).replace("\\","/"),
+                    cat_icon: (app.globalData.host + item.picture.slice(1)).replaceAll("\\","/"),
                     regional:item.regional,
                     culture_desc:item.culture,
                     efficacy:item.efficacy,

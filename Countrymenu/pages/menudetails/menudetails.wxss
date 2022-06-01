@@ -39,6 +39,17 @@
   line-height: 48rpx;
 }
 
+.help{
+  text-align: center;
+  margin: 40rpx 20rpx 30rpx 20rpx ;
+  font-size: 30rpx;
+  line-height: 48rpx;
+}
+
+.goodslist{
+  
+}
+
 .buzhou{
   text-align: center;
   margin: 40rpx 20rpx 30rpx 20rpx ;

@@ -22,7 +22,7 @@ Page({
                 cat_name: item.goodsName,
                 goods_describe:item.goodsDescribe,
                 cat_icon: item.goodsPicture.split("|").map(function(res){
-                     return app.globalData.host + res.slice(1).replace("\\","/")
+                     return app.globalData.host + res.slice(1).replaceAll("\\","/")
                  }),
                 place:item.goodsPlace,
                 price:item.goodsPrice,

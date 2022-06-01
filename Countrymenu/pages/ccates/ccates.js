@@ -10,11 +10,13 @@ Page({
     menuListData: [],
     activeKey: 0,
     triggered: false,
-    stopPull:false,
+    // stopPull:false,
     index2:1,
     topNum:0,
     loadinghidden:false,
     done:false,
+    donehidden:true,
+    tips:"--加载中--"
   },
 
   //  // 获取滚动条当前位置
@@ -60,25 +62,60 @@ Page({
         // var up = 'forthData['+index+'].children'
         if(res['data'].length==0)
         {
+          this.data.done=true;
+          this.data.tips="--没有更多了--";
            return;
         }
         if(res['data'].length<8)
         {
            this.data.done=true;
+           this.data.tips="--没有更多了--";
         }
+        let allData = this.data.menuListData
+         console.log(allData)
+        let pushData = this.changeJsonKey(res['data'])
+        console.log(pushData)
+        pushData.forEach((value, index, array) => {
+         allData.push(value)
+       })
         this.setData({
-          menuListData: this.changeJsonKey(res['data']),
-        })
-        this.setData({
-          stopPull:false,
-        })
+          menuListData: allData,
+       })
+        
         this.setData({
           loadinghidden:true,
         })
-        this.goTop();
-        console.log("gotop")
+        // this.goTop();
+        // console.log("gotop")
         
     },
+
+    //换分类加载
+    loadRecipe2: function (res,index){
+      // 更改json键名 
+      // var up = 'forthData['+index+'].children'
+      if(res['data'].length==0)
+      {
+        this.data.done=true;
+         return;
+      }
+      if(res['data'].length<8)
+      {
+         this.data.done=true;
+      }
+      
+      this.setData({
+        menuListData: this.changeJsonKey(res['data']),
+      })
+      
+      this.setData({
+        loadinghidden:true,
+      })
+      this.goTop();
+      // console.log("gotop")
+      
+  },
+
 
     /**
    * 页面上拉触底事件的处理函数
@@ -89,25 +126,49 @@ Page({
       activeKey:event.detail
     })
     this.changeData(event.detail);
+    this.data.index2=1;
   },
 
   changeData(index1){
-    this.data.index2=1;
+    this.data.tips="--加载中--";
+    let index2=this.data.index2;
     this.data.done=false;
     if(index1==0){
-      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      call.postRequest("api/recipes/type?type=日常菜谱",{'page':index2},"application/x-www-form-urlencoded",
+      this.loadRecipe2,console.log,0)
+    }
+    else if(index1==1){
+      call.postRequest("api/recipes/type?type=文化菜谱",{'page':index2},"application/x-www-form-urlencoded",
+      this.loadRecipe2,console.log,1)
+    }
+    else if(index1==2){
+      call.postRequest("api/recipes/type?type=自制菜谱",{'page':index2},"application/x-www-form-urlencoded",
+      this.loadRecipe2,console.log,2)
+    }
+    else if(index1==3){
+      call.postRequest("api/recipes/type?type=功能菜谱",{'page':index2},"application/x-www-form-urlencoded",
+      this.loadRecipe2,console.log,3)
+    }
+
+    
+  },
+
+  loadData(index1){
+    let index2=this.data.index2;
+    if(index1==0){
+      call.postRequest("api/recipes/type?type=日常菜谱",{'page':index2},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,0)
     }
     else if(index1==1){
-      call.postRequest("api/recipes/type?type=文化菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      call.postRequest("api/recipes/type?type=文化菜谱",{'page':index2},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,1)
     }
     else if(index1==2){
-      call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      call.postRequest("api/recipes/type?type=自制菜谱",{'page':index2},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,2)
     }
     else if(index1==3){
-      call.postRequest("api/recipes/type?type=功能菜谱",{'page':'1'},"application/x-www-form-urlencoded",
+      call.postRequest("api/recipes/type?type=功能菜谱",{'page':index2},"application/x-www-form-urlencoded",
       this.loadRecipe,console.log,3)
     }
 
@@ -115,35 +176,34 @@ Page({
   },
 
   onPullDown(e) {
-    console.log("onPullDown", e);
-    if(this.data.index2<=1)
-      {
-        return;
-      }
-    this.data.index2--;
-    call.postRequest("api/recipes/type?type=日常菜谱",{'page':this.data.index2},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,0)
+    // console.log("onPullDown", e);
+    // if(this.data.index2<=1)
+    //   {
+    //     return;
+    //   }
+    // this.data.index2--;
+    // this.changeData(this.data.activeKey);
   },
 
   onPullUp(e) {
     if(this.data.done==true)
     {
-
       return;
     }
-    if (this.data.stopPull) {
-       wx.stopPullDownRefresh()
-    }
-    else{
-      this.data.stopPull=true;
-      console.log("onPullUp", e);
-      this.data.index2++;
-      this.setData({
-        loadinghidden:false,
-      })
-      call.postRequest("api/recipes/type?type=日常菜谱",{'page':this.data.index2},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,0)
-    }
+    // if (this.data.stopPull) {
+    //    wx.stopPullDownRefresh()
+    // }
+    // else{
+    //   this.data.stopPull=true;
+    //   console.log("onPullUp", e);
+    //   this.data.index2++;
+    //   this.setData({
+    //     loadinghidden:false,
+    //   })
+    //   this.changeData(this.data.activeKey);
+    // }
+    this.data.index2++;
+    this.loadData(this.data.activeKey);
   },
 
   //用户下拉动作
@@ -166,26 +226,7 @@ Page({
     this.setData({
       activeKey:data.pageData
     })
-    if(data.pageData==0){
-      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,0)
-    }
-    else if(data.pageData==1){
-      call.postRequest("api/recipes/type?type=文化菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,1)
-    }
-    else if(data.pageData==2){
-      call.postRequest("api/recipes/type?type=功能菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,2)
-    }
-    else if(data.pageData==3){
-      call.postRequest("api/recipes/type?type=自制菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,3)
-    }
-    else{
-      call.postRequest("api/recipes/type?type=日常菜谱",{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log,0)
-    }
+    this.changeData(data.pageData);
   },
  
   /**
@@ -199,6 +240,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(this.data.done==true)
+    {
+      this.data.tips="--没有更多了--";
+    }
+    else{
+      this.data.tips="--加载中--";
+    }
+    
   },
 
   

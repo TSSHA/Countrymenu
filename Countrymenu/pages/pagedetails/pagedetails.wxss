@@ -1,0 +1,27 @@
+/* pages/pagedetails/pagedetails.wxss */
+h1{
+  font-size: 44rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20rpx 20rpx;
+}
+.index_swiper swiper {
+  width: 750rpx;
+  height: 410rpx;
+  padding:20rpx 20rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+
+.page_body{
+  font-size: 36rpx;
+  padding:20rpx 30rpx;
+}
+
+.p{
+  font-size: 36rpx;
+}
+

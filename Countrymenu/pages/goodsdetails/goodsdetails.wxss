@@ -22,20 +22,21 @@
   height: 750rpx;
 }
 .name{
+  text-align: center;
   font-size: 40rpx;
   color: #000;
   line-height: 60rpx;
   padding-top: 20rpx;
-  padding-left: 50rpx;
+  padding: 20rpx 50rpx;
   font-weight: bold;
 }
 .brief{
-  padding-left: 50rpx;
+  padding: 20rpx 50rpx;
   font-size: 34rpx;
   line-height: 48rpx;
 }
 .price{
-  padding-left: 50rpx;
+  padding: 20rpx 50rpx;
   font-size: 40rpx;
   color: #e50e38;
   line-height: 48rpx;
@@ -43,7 +44,7 @@
 }
 
 .origin{
-  padding-left: 50rpx;
+  padding: 20rpx 50rpx;
   font-size: 34rpx;
   line-height: 48rpx;
 }

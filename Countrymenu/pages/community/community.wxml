@@ -1,28 +1,49 @@
-<!--pages/market/market.wxml-->
-<view class="market_index">
+
   <!--导航 结束-->
-  <view>
   <view class="container">
-    <view class="picture">
-      <block wx:for="{{ listData }}"
-        wx:key="index">
-        <view class="item" >
-          <navigator>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+       <van-tab title="助农故事">
+        <view class="picture">
+      <view class="null-wrap"></view>
+      <scroll-view  class='nav' scroll-y scroll-top='{{topNum}}' bindscrolltolower="onPullUp" bindrefresherrestore="onPullDown"   bindtap="goTop" refresher-triggered="{{triggered}}"
+        >
+        <view class="item" wx:for="{{ listData }}" wx:key="index" >
+          <navigator  url="../pagedetails/pagedetails?pagedata={{item.page_id}}">
             <image 
               lazy-load
               mode="widthFix"
-              src="{{ item.funcPhoto }}" />
-              <text class="page_name">{{ item.page_name }}</text>
+              src="{{ item.page_pic }}" />
+              <text class="page_name">{{ item.page_title }}</text>
               <view class="text-center"></view>
           </navigator>
         </view>
         <view class="null-wrap"></view>
-      </block>
+      </scroll-view>
     </view>
-  </view>
+       </van-tab>
+       <van-tab title="美食文化">
+        <view class="picture">
+      <view class="null-wrap"></view>
+      
+      <scroll-view class='nav' scroll-y scroll-top='{{topNum}}' bindscrolltolower="onPullUp2" bindrefresherrestore="onPullDown2" bindtap="goTop" refresher-triggered="{{triggered}}">
+        <view class="item" wx:for="{{ listData2 }}" 
+        wx:key="index">
+          <navigator  url="../pagedetails/pagedetails?pagedata={{item.page_id}}">
+            <image 
+              lazy-load
+              mode="widthFix"
+              src="{{ item.page_pic }}" />
+              <text class="page_name">{{ item.page_title }}</text>
+              <view class="text-center"></view>
+          </navigator>
+        </view>
+        <view class="null-wrap"></view>
+      </scroll-view>
+    </view>
+       </van-tab>
+</van-tabs>
+    
 </view>
 
-  
-  
-</view>
+
 

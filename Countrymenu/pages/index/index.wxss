@@ -24,4 +24,5 @@
 }
 .index_cate navigator image{
   border-radius: 20rpx;
+  padding-bottom: 10rpx;
 }

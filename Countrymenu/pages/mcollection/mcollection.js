@@ -15,7 +15,7 @@ Page({
   changeJsonKey: function (res){
     return res.map(function(item){
         return {
-            cat_icon: (app.globalData.host + item.goodsPicture.slice(1)).replace("\\","/"),
+            cat_icon: (app.globalData.host + item.goodsPicture.slice(1)).replaceAll("\\","/"),
             goods_name: item.goodsName,
             goods_describe:item.goodsDescribe,
             cat_id: item.goodsId,

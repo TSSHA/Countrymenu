@@ -1,0 +1,23 @@
+
+<h1>{{pagedata.page_title}}</h1>
+<!--轮播图 开始-->
+<view class="index_swiper">
+    <swiper autoplay="true" indicator-dots="true">
+      <swiper-item
+      wx:for="{{pagedata.page_pic}}"
+      wx:key="index"
+      >
+        <navigator>
+         <image mode="widthFix" src="{{item}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--轮播图 结束-->
+<view class="page_body"
+wx:for="{{pagedata.page_body}}"
+wx:key="*this">
+  <text class="p" style="white-space:pre-wrap">{{item}}</text>
+</view>
+
+

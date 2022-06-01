@@ -2,6 +2,7 @@
 /* 全局内边距 */
 .container {
   padding: 0 20rpx;
+  height: 94vh;
 }
 /* 瀑布流布局
 .picture{
@@ -9,12 +10,18 @@
   column-count: 2;
   margin: 20rpx 0;
 } */
+
+.nav{
+  height: 90vh;
+}
+
 .item {
   width: calc(100% - 30rpx);
   break-inside: avoid;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
   border-radius: 20rpx;
   margin: 0 15rpx;
+  padding: 20rpx 0rpx;
 }
 .item image {
   width: 100%;

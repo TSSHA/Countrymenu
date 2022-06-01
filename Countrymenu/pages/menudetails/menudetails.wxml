@@ -15,6 +15,22 @@
   {{item}}
   </van-grid-item>
 </van-grid>
+  <view class="help">
+    --助农菜品--
+  </view>
+  <view class="goodslist">
+  <navigator class="goods" url="../goodsdetails/goodsdetails?goodsid={{item.cat_id}}" >
+    <van-card
+    price="{{item.goods_price}}"
+    desc="{{item.goods_describe}}"
+    title="{{item.goods_name}}"
+    thumb="{{item.cat_icon}}"
+    title-class="product-name"
+    desc-class="product-desc"
+    price-class="product-price">
+   </van-card>
+    </navigator>
+  </view>
   <view class="buzhou">
     --烹饪步骤--
   </view>

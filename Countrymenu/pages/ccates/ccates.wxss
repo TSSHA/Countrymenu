@@ -21,6 +21,12 @@
   padding:20rpx 20rpx;
 }
 
+.done{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 48rpx;
+}
+
 .right-side .box_1 image{
   border-radius: 20rpx;
 }

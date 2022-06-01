@@ -13,7 +13,8 @@
     "pages/about/about",
     "pages/ccollection/ccollection",
     "pages/mcollection/mcollection",
-    "pages/searchGoods/searchGoods"
+    "pages/searchGoods/searchGoods",
+    "pages/pagedetails/pagedetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

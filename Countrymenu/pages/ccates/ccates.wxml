@@ -18,6 +18,7 @@
     <text class="menu_describe">{{item.goods_describe}}</text>
     </navigator>
   </view>
+  <view class="done" >{{tips}}</view>
   </scroll-view>
   </view>
 <loading hidden="{{loadinghidden}}">数据加载中</loading>

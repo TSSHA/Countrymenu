@@ -12,9 +12,6 @@
     title-class="product-name"
     desc-class="product-desc"
     price-class="product-price">
-    <view slot="footer">
-    <van-button size="mini">删除</van-button>
-  </view>
    </van-card>
     </navigator>
    </view>
