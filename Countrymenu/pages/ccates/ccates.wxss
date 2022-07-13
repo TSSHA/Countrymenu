@@ -36,7 +36,7 @@
   font-weight: bolder;
 }
 .right-side .box_1 .menu_describe{
-  font-size: 29rpx;
+  font-size: 30rpx;
   color:gray;
   display:-webkit-box;
   -webkit-line-clamp:2;

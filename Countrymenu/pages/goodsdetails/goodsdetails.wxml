@@ -3,12 +3,12 @@
       <block wx:for="{{goodsData.cat_icon}}"
       wx:key="*this">
           <swiper-item>
-              <image src="{{item}}" class="slideImage" />
+              <image src="{{item}}" class="slideImage" lazy-load="true" />
           </swiper-item>
       </block>
   </swiper>
   <view class="name">{{goodsData.cat_name}}</view>
-  <view class="brief">{{goodsData.goods_describe}}</view>
+  <view class="brief">功效：{{goodsData.goods_describe}}</view>
   <!-- <view class="brief">功效：{{goodsData.goods_describe}}</view> -->
   <view class="origin">产地：{{goodsData.place}}</view>
   <view class="price">{{goodsData.price}}</view>

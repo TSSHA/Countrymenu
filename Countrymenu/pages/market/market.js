@@ -1,4 +1,6 @@
-import {firstData,secondData,thirdData} from "./marketdata.js"
+import {firstData,secondData} from "./marketdata.js"
+const call = require("../../utils/request")
+var app = getApp()
 Page({
 
   /**
@@ -7,7 +9,6 @@ Page({
   data: {
     firstData, //初始数据
     secondData, 
-    thirdData, 
     swiperData:[],
     goodslistData: [],
     value: '',
@@ -31,6 +32,29 @@ Page({
   })
   },
 
+  //更改json键名
+  changeJsonKey: function (res){
+    return res.map(function(item){
+        return {
+            cat_icon: (app.globalData.host + item.goodsPicture.slice(1)).replaceAll("\\","/"),
+            goods_name: item.goodsName,
+            goods_describe:item.goodsDescribe,
+            cat_id: item.goodsId,
+            goods_price:item.goodsPrice
+        }
+    });
+},
+//加载商品
+loadGoods: function (res){
+    // 更改json键名 
+    console.log(res);
+    
+    this.setData({
+      goodslistData:this.changeJsonKey(res['data']),
+    })
+    
+},
+
 
 
   /**
@@ -38,13 +62,13 @@ Page({
    */
   onLoad: function () {
   // Navigate
+  call.postRequest("api/mall/type?type=蔬菜豆制品",{'page':1},"application/x-www-form-urlencoded",
+      this.loadGoods,console.log,0)
     let newArray1 = this.data.firstData;
     let newArray2 = this.data.secondData;
-    let newArray3 = this.data.thirdData;
     this.setData({
       swiperData:newArray1,
-      guideData:newArray2,
-      goodslistData: newArray3
+      guideData:newArray2
     })
   },
 

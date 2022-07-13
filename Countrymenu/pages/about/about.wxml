@@ -1,5 +1,5 @@
 <view class="top">
-      <image src="https://dcdn.it120.cc/2022/05/11/71f852d2-3e6b-470e-9401-650f1c093ac5.jpg" alt="1"></image>
+      <image src="https://dcdn.it120.cc/2022/05/11/71f852d2-3e6b-470e-9401-650f1c093ac5.jpg" alt="1" lazy-load="true"></image>
       <text  bindtap="logins">乡村助农菜谱</text>
    </view>
    <view class="content">
@@ -8,11 +8,11 @@
      开发者
    </view>
    <view class="box1">
-     <image src="https://dcdn.it120.cc/2022/05/19/850edabd-301f-41ea-9000-e5f34b07b7ac.jpg" alt=""></image>
+     <image src="https://dcdn.it120.cc/2022/05/19/850edabd-301f-41ea-9000-e5f34b07b7ac.jpg" alt="" lazy-load="true"></image>
      <text>TSSHA</text>
    </view>
    <navigator class="box1">
-    <image src="https://dcdn.it120.cc/2022/05/19/5a8a377c-1434-43f2-a5fd-038dde988def.jpg" alt=""></image>
+    <image src="https://dcdn.it120.cc/2022/05/19/5a8a377c-1434-43f2-a5fd-038dde988def.jpg" alt="" lazy-load="true"></image>
     <text>Orall</text>
   </navigator>
   </view>
@@ -21,11 +21,11 @@
      素材收集
    </view>
    <view class="box1">
-     <image src="https://dcdn.it120.cc/2022/05/19/f3d0b126-2384-4bc1-ab3b-99eb3c59b940.jpg" alt=""></image>
+     <image src="https://dcdn.it120.cc/2022/05/19/f3d0b126-2384-4bc1-ab3b-99eb3c59b940.jpg" alt="" lazy-load="true"></image>
      <text>ssqkaa</text>
    </view>
    <navigator class="box1">
-    <image src="https://dcdn.it120.cc/2022/05/19/ea8b2180-5978-4928-b06b-e41e539eba7d.jpg" alt=""></image>
+    <image src="https://dcdn.it120.cc/2022/05/19/ea8b2180-5978-4928-b06b-e41e539eba7d.jpg" alt="" lazy-load="true"></image>
     <text>MN</text>
   </navigator>
   </view>

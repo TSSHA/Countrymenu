@@ -24,5 +24,9 @@
 }
 .index_cate navigator image{
   border-radius: 20rpx;
-  padding-bottom: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+van-search view{
+  color: white;
 }

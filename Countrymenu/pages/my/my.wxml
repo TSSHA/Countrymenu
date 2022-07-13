@@ -4,26 +4,26 @@
    </view>
    <view class="content">
         <navigator class="left" url="../ccollection/ccollection">
-          <image src="https://dcdn.it120.cc/2022/05/17/2078a071-24dd-4ef8-9c22-2f548c6fcc6f.png" alt=""></image>
+          <image src="https://dcdn.it120.cc/2022/05/17/2078a071-24dd-4ef8-9c22-2f548c6fcc6f.png" alt="" lazy-load="true"></image>
           <text>菜谱收藏</text>
         </navigator>
         <navigator class="right" url="../mcollection/mcollection">
-          <image src="https://dcdn.it120.cc/2022/05/17/b93b4d45-7c78-415a-9d94-0192b7433b77.png" alt=""></image>
+          <image src="https://dcdn.it120.cc/2022/05/17/b93b4d45-7c78-415a-9d94-0192b7433b77.png" alt="" lazy-load="true"></image>
           <text>商品收藏</text>
     </navigator>
 
    </view>
    <view class="box">
    <view class="box1">
-     <image src="https://dcdn.it120.cc/2022/05/17/a3acabd4-dbf0-49ea-b148-9d723cb39d22.png" alt=""></image>
+     <image src="https://dcdn.it120.cc/2022/05/17/a3acabd4-dbf0-49ea-b148-9d723cb39d22.png" alt="" lazy-load="true"></image>
      <text>勋章</text>
    </view>
    <navigator class="box1" url="../about/about">
-    <image src="https://dcdn.it120.cc/2022/05/17/7e43070f-180d-49c7-8a70-8b703d15f761.png" alt=""></image>
+    <image src="https://dcdn.it120.cc/2022/05/17/7e43070f-180d-49c7-8a70-8b703d15f761.png" alt="" lazy-load="true"></image>
     <text>关于我们</text>
   </navigator>
   <view class="box1">
-    <image src="https://dcdn.it120.cc/2022/05/17/97272213-895f-4e2a-95a6-bf6800297b89.png" alt=""></image>
+    <image src="https://dcdn.it120.cc/2022/05/17/97272213-895f-4e2a-95a6-bf6800297b89.png" alt="" lazy-load="true"></image>
     <button open-type="share">分享给朋友</button>
   </view>
 </view>

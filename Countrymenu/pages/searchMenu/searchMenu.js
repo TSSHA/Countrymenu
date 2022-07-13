@@ -33,7 +33,7 @@ Page({
      });
      },
     //加载菜谱
-    loadRecipe: function (res,index){
+    searchMenu: function (res,index){
         // 更改json键名 
         if(res['data'].length==0)
         {
@@ -88,7 +88,7 @@ Page({
    */
   onLoad: function (data) {
     call.postRequest("api/recipes/search?find="+data.value,{'page':'1'},"application/x-www-form-urlencoded",
-    this.loadRecipe,console.log)
+    this.searchMenu,console.log)
   },
  
   /**

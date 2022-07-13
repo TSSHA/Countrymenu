@@ -15,6 +15,7 @@ Page({
   },
 
   changeJsonKey_Specific: function (res){
+    console.log(res);
             let a = [];
             a.push(res)
             return a.map(function(item){
@@ -28,6 +29,18 @@ Page({
                     efficacy:item.efficacy,
                     cailiao:item.materials.split('|'),
                     buzhou:item.practice.split('|'),
+                    buzhou_pic:item.practicePicture.split("|").map(function(res){
+                      return (app.globalData.host + res.slice(1)).replaceAll("\\","/")
+                  }),
+                    mall:item.mall.map(function(res){
+                      return {
+                        goodsDescribe:res.goodsDescribe,
+                        goodsId:res.goodsId,
+                        goodsName:res.goodsName,
+                        goodsPrice:res.goodsPrice.slice(1),
+                        goodsPicture:(app.globalData.host + res.goodsPicture.slice(1)).replaceAll("\\","/")
+                      }
+                  }),
                 }
             });
         },

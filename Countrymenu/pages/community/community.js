@@ -92,13 +92,13 @@ Page({
     
   },
 
-  loadData1(index1){
+  loadPages1(index1){
     let index2=this.data.index2;
     this.data.done=false;
     call.postRequest("api/museums/",{'page':index2,'type':"助农故事"},"application/x-www-form-urlencoded",this.getpages,console.log);
   },
 
-  loadData2(index1){
+  loadPages2(index1){
     let index2=this.data.index2;
     this.data.done=false;
     call.postRequest("api/museums/",{'page':index2,'type':"美食文化"},"application/x-www-form-urlencoded",this.getpages2,console.log);
@@ -109,8 +109,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    call.postRequest("api/museums/",{'page':1,'type':"助农故事"},"application/x-www-form-urlencoded",this.getpages,console.log);
-    call.postRequest("api/museums/",{'page':1,'type':"美食文化"},"application/x-www-form-urlencoded",this.getpages2,console.log);
+    call.postRequest("api/museums/type",{'page':1,'type':"助农故事"},"application/x-www-form-urlencoded",this.getpages,console.log);
+    call.postRequest("api/museums/type",{'page':1,'type':"美食文化"},"application/x-www-form-urlencoded",this.getpages2,console.log);
   },
 
   onPullUp(e) {
@@ -119,7 +119,7 @@ Page({
       return;
     }
     this.data.index2++;
-    this.loadData1(this.data.activeKey);
+    this.loadPages1(this.data.activeKey);
 
   },
 
@@ -129,7 +129,7 @@ Page({
       return;
     }
     this.data.index2++;
-    this.loadData2(this.data.activeKey);
+    this.loadPages2(this.data.activeKey);
 
   },
 

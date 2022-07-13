@@ -67,7 +67,7 @@
 }
 
 .goods_list .goods navigator .goods_describe{
-  font-size: 29rpx;
+  font-size: 30rpx;
   color:gray;
   display:-webkit-box;
   -webkit-line-clamp:1;
@@ -78,7 +78,7 @@
 
 
 .goods_list .goods navigator .goods_price{
-  font-size: 42rpx;
+  font-size: 40rpx;
   font-weight: bolder;
   color: red;
 }
@@ -92,6 +92,16 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.done{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 48rpx;
+}
+
+van-search view{
+  color: white;
 }
 
 

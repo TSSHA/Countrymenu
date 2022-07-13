@@ -33,6 +33,7 @@ Page({
             goods_name: item.goodsName,
             goods_describe:item.goodsDescribe,
             cat_id: item.goodsId,
+            goods_price:item.goodsPrice.slice(1)
         }
     });
 },
@@ -70,7 +71,7 @@ loadGoods: function (res){
 //加载商品
 loadGoods2: function (res){
   // 更改json键名 
-  // console.log(res);
+   console.log(res);
   if(res['data'].length==0)
   {
     this.data.done=true;

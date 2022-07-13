@@ -19,27 +19,27 @@ const secondData = [
   {
     guide_name: "蔬菜豆制品",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/6ef9a9fd-a18e-422c-9526-b6e5adcbc890.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/d74ced0a-ee24-4187-b1fd-9eb8210e9e3f.png"
   },
   {
     guide_name: "肉禽蛋",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/b31d209d-ebb3-4d29-ada2-160cd4bd7259.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/9f4ebd98-ee67-4b16-a78d-51faef1e1c0c.png"
   },
   {
     guide_name: "海鲜水产",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/e76c6a41-6a0e-48a1-ab1a-668f4e7fdcc0.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/9dbbd406-b9a6-41c8-a849-ddbd7411f37a.png"
   },
   {
     guide_name: "水果鲜花",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/1bcee70b-86d0-4e8d-9f16-930208c6113d.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/f5c8477e-345b-4586-899e-f4e55b81ded8.png"
   },
   {
     guide_name: "乳品",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/0f1f5bea-6774-4529-9005-36f932f28462.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/fb60fd73-6ff0-43f9-a0f7-539d5c2accdb.png"
   },
   {
     guide_name: "粮油调味",
@@ -49,12 +49,12 @@ const secondData = [
   {
     guide_name: "酒水饮料",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/5f183e59-6548-45be-8660-a0d3758d822a.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/28d12cdb-07b6-4d04-9b2d-ae21766badd4.png"
   },
   {
     guide_name: "熟食预制菜",
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/13/982aeee6-6a68-4408-8c54-65d0e52fda10.png"
+    funcPhoto: "https://dcdn.it120.cc/2022/06/03/942cf41c-1462-4496-9619-24c1545687f0.png"
   }
   
 ]

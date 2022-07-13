@@ -13,12 +13,12 @@
     wx:key="*this">
     <navigator  url="../menudetails/menudetails?menuid={{item.cat_id}}"
     >
-    <image mode="widthFix" src="{{item.cat_icon}}"></image>
+    <image mode="widthFix" src="{{item.cat_icon}}" lazy-load="true"></image>
     <text class="menu_name">{{item.goods_name}}</text>
     <text class="menu_describe">{{item.goods_describe}}</text>
     </navigator>
   </view>
-  <view class="done" >{{tips}}</view>
+  <view class="done" >--没有更多了--</view>
   </scroll-view>
   </view>
 <loading hidden="{{loadinghidden}}">数据加载中</loading>

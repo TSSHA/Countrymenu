@@ -8,7 +8,7 @@
       wx:key="index"
       >
         <navigator>
-         <image mode="widthFix" src="{{item}}"></image>
+         <image mode="widthFix" src="{{item}}" lazy-load="true"></image>
         </navigator>
       </swiper-item>
     </swiper>
@@ -17,7 +17,7 @@
 <view class="page_body"
 wx:for="{{pagedata.page_body}}"
 wx:key="*this">
-  <text class="p" style="white-space:pre-wrap">{{item}}</text>
+  <text class="p" style="white-space:pre-wrap" decode="nbsp">{{item}}</text>
 </view>
 
 

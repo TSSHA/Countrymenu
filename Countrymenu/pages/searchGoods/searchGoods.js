@@ -25,7 +25,7 @@ Page({
 },
 
 //加载商品
-loadGoods: function (res){
+searchGoods: function (res){
   // 更改json键名 
   console.log(res);
   if(res['data'].length==0)
@@ -65,7 +65,7 @@ loadGoods: function (res){
    */
   onLoad: function (data) {
     call.postRequest("api/mall/search?find="+data.value,{'page':'1'},"application/x-www-form-urlencoded",
-      this.loadGoods,console.log,0)
+      this.searchGoods,console.log,0)
     
   },
 

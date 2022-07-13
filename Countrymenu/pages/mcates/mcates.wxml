@@ -24,7 +24,7 @@
    </van-card>
     </navigator>
    </view>
-   <view class="done" hidden="{{done}}">--没有更多了--</view>
+   <view class="done">--没有更多了--</view>
   </scroll-view>
   
   </view>

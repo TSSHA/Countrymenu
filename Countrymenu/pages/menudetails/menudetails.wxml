@@ -18,13 +18,14 @@
   <view class="help">
     --助农菜品--
   </view>
-  <view class="goodslist">
-  <navigator class="goods" url="../goodsdetails/goodsdetails?goodsid={{item.cat_id}}" >
+  <view class="goodslist"wx:for="{{menuData.mall}}"
+  wx:key="*this">
+  <navigator class="goods" url="../goodsdetails/goodsdetails?goodsid={{item.goodsId}}" >
     <van-card
-    price="{{item.goods_price}}"
-    desc="{{item.goods_describe}}"
-    title="{{item.goods_name}}"
-    thumb="{{item.cat_icon}}"
+    price="{{item.goodsPrice}}"
+    desc="{{item.goodsDescribe}}"
+    title="{{item.goodsName}}"
+    thumb="{{item.goodsPicture}}"
     title-class="product-name"
     desc-class="product-desc"
     price-class="product-price">
@@ -40,7 +41,8 @@
   wx:key="*this">
     <view>
       {{index+1}}
-      <text>{{item}}</text>
+      <text class="buzhou_des">{{item}}</text>
+      <image class="buzhou_pic" src="{{menuData.buzhou_pic[index]}}" lazy-load="true"></image>
     </view>
   </view>
   </view>

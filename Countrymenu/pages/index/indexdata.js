@@ -10,11 +10,11 @@ const firstData = [
   },
   {
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/25/f706cb23-f7bf-441f-b230-dd9b9ba39307.jpg"
+    funcPhoto: "https://dcdn.it120.cc/2022/05/25/8a291676-a590-4466-b68d-743029b59702.jpg"
   },
   {
     id: "62",
-    funcPhoto: "https://dcdn.it120.cc/2022/05/25/8a291676-a590-4466-b68d-743029b59702.jpg"
+    funcPhoto: "https://dcdn.it120.cc/2022/05/25/f706cb23-f7bf-441f-b230-dd9b9ba39307.jpg"
   }
 ]
 

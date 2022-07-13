@@ -10,7 +10,7 @@
         <view class="item" wx:for="{{ listData }}" wx:key="index" >
           <navigator  url="../pagedetails/pagedetails?pagedata={{item.page_id}}">
             <image 
-              lazy-load
+            lazy-load="true"
               mode="widthFix"
               src="{{ item.page_pic }}" />
               <text class="page_name">{{ item.page_title }}</text>
@@ -30,7 +30,7 @@
         wx:key="index">
           <navigator  url="../pagedetails/pagedetails?pagedata={{item.page_id}}">
             <image 
-              lazy-load
+            lazy-load="true"
               mode="widthFix"
               src="{{ item.page_pic }}" />
               <text class="page_name">{{ item.page_title }}</text>

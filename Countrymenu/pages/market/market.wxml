@@ -45,7 +45,7 @@
     wx:for="{{guideData}}"
       wx:for-index="index"
       wx:key="*this">
-      <image  src="{{item.funcPhoto}}"></image>
+      <image mode="widthFix"  src="{{item.funcPhoto}}" lazy-load="true"></image>
       <text>{{item.guide_name}}</text>
     </navigator>
   </view>
@@ -56,11 +56,11 @@
       <block wx:for="{{ goodslistData }}"
         wx:key="index">
         <view class="item" >
-          <navigator url="../goodsdetails/goodsdetails?goodsid={{item.id}}">
+          <navigator url="../goodsdetails/goodsdetails?goodsid={{item.cat_id}}">
             <image 
-              lazy-load
+            lazy-load="true"
               mode="widthFix"
-              src="{{ item.funcPhoto }}" />
+              src="{{ item.cat_icon }}" />
               <text class="goods_name">{{ item.goods_name }}</text>
               <text class="goods_describe">{{ item.goods_describe }}</text>
               <text class="goods_price">{{ item.goods_price }}</text>
@@ -69,7 +69,7 @@
       </block>
     </view>
     </view>
-  
+    <view class="done">--更多商品尽在商品分类--</view>
   
 </view>
 

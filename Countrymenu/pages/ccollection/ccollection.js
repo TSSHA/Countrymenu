@@ -21,7 +21,7 @@ Page({
         });
     },
     //加载菜谱
-    loadRecipe: function (res,index){
+    loadCollectedrecipe: function (res,index){
         // 更改json键名 
         // var up = 'forthData['+index+'].children'
         console.log(res);
@@ -42,7 +42,7 @@ Page({
       console.log(res);
       let token=wx.getStorageSync('token');
       call.postRequest("api/collection/type?type=recipe",{'token':token},"application/x-www-form-urlencoded",
-      this.loadRecipe,console.log)
+      this.loadCollectedrecipe,console.log)
    },
 
   onPullDown(e) {
@@ -71,7 +71,7 @@ Page({
   onLoad: function (options) {
     let token=wx.getStorageSync('token');
     call.postRequest("api/collection/type?type=recipe",{'token':token},"application/x-www-form-urlencoded",
-    this.loadRecipe,console.log)
+    this.loadCollectedrecipe,console.log)
   },
  
   /**

@@ -32,7 +32,7 @@ Page({
 
 //加载具体菜谱
 
-loadSpecificRecipe: function (res){
+loadSpecificGoods: function (res){
     let that = this
 
     console.log(res)
@@ -86,7 +86,7 @@ onLoad: function (data) {
 
       //注意这里的id是对应的id，data数据中应该有一个
       call.postRequest("api/mall/"+data.goodsid,{},"application/x-www-form-urlencoded",
-      this.loadSpecificRecipe,console.log)
+      this.loadSpecificGoods,console.log)
 },
 
 

@@ -35,7 +35,7 @@ App({
             'content-type': 'application/x-www-form-urlencoded'
           },
           success: function (res) {
-            console.log(res.data.data.token);
+            console.log("res",res);
             let setNowTime = Date.now() + 3600 * 1000 * 24 * 30;  // 设置了30天有效期
             wx.setStorageSync('token',res.data.data.token, setNowTime)
           }

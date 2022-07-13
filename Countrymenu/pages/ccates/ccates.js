@@ -52,7 +52,7 @@ Page({
                 cat_id: item.id,
                 goods_name: item.dishes,
                 goods_describe:item.describes,
-                cat_icon: (app.globalData.host + item.picture.slice(1)).replace("\\","/")
+                cat_icon: (app.globalData.host + item.picture.slice(1)).replaceAll("\\","/")
             }
         });
     },

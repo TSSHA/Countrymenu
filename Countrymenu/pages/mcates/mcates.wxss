@@ -18,18 +18,24 @@
 }
 
 .right-side .box_1 .product-name {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: bolder;
 }
 
 .right-side .box_1 .product-desc {
-  font-size: 29rpx;
+  font-size: 30rpx;
   color: gray;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+}
+
+
+
+.right-side .box_1 .product-price {
+  font-size: 34rpx;
 }
 
 .done{

@@ -24,7 +24,7 @@ Page({
 },
 
 //加载商品
-loadGoods: function (res){
+loadCollectedGoods: function (res){
   // 更改json键名 
   console.log(res['data']);
   // if(res['data'].length<8)
@@ -49,7 +49,7 @@ deleteGoods2:function(res){
    console.log(res);
    let token=wx.getStorageSync('token');
    call.postRequest("api/collection/type?type=mall",{'token':token},"application/x-www-form-urlencoded",
-   this.loadGoods,console.log)
+   this.loadCollectedGoods,console.log)
 },
 
   
@@ -69,7 +69,7 @@ deleteGoods2:function(res){
   onLoad: function (options) {
     let token=wx.getStorageSync('token');
     call.postRequest("api/collection/type?type=mall",{'token':token},"application/x-www-form-urlencoded",
-    this.loadGoods,console.log)
+    this.loadCollectedGoods,console.log)
   },
 
   /**

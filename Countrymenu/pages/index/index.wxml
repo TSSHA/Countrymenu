@@ -21,7 +21,7 @@
       wx:key="index"
       >
         <navigator>
-         <image mode="widthFix" src="{{item.funcPhoto}}"></image>
+         <image mode="widthFix" src="{{item.funcPhoto}}" lazy-load="true"></image>
         </navigator>
       </swiper-item>
     </swiper>
@@ -33,7 +33,7 @@
       wx:for="{{guideData}}"
       wx:for-index="index"
       wx:key="*this">
-      <image mode="aspectFill" src="{{item.funcPhoto}}"></image>
+      <image mode="aspectFill" src="{{item.funcPhoto}}" lazy-load="true"></image>
       <text>{{item.guide_name}}</text>
     </navigator>
     
